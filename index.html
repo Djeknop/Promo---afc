@@ -6,6 +6,17 @@
     <title>Promo Ruby AFC Life Science - Jaminan Mutu Standar Jepang</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS murni untuk fungsionalitas tab interaktif tanpa JavaScript tambahan */
+        .tab-content { display: none; }
+        #tab-hikari:checked ~ .tabs-container #content-hikari { display: block; }
+        #tab-utsukushhii:checked ~ .tabs-container #content-utsukushhii { display: block; }
+        #tab-subarashi:checked ~ .tabs-container #content-subarashi { display: block; }
+
+        #tab-hikari:checked ~ .tab-buttons label[for="tab-hikari"] { color: #b91c1c; border-color: #b91c1c; background-color: #fef2f2; }
+        #tab-utsukushhii:checked ~ .tab-buttons label[for="tab-utsukushhii"] { color: #b91c1c; border-color: #b91c1c; background-color: #fef2f2; }
+        #tab-subarashi:checked ~ .tab-buttons label[for="tab-subarashi"] { color: #b91c1c; border-color: #b91c1c; background-color: #fef2f2; }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
@@ -17,8 +28,9 @@
             <nav class="hidden md:flex space-x-8 font-medium">
                 <a href="#home" class="hover:text-red-700 transition">Home</a>
                 <a href="#promo" class="text-red-600 font-bold hover:text-red-700 transition">Promo Ruby</a>
-                <a href="#certificates" class="hover:text-red-700 transition">Jaminan Mutu</a>
+                <a href="#facts" class="hover:text-red-700 transition">5 Fakta Produk</a>
                 <a href="#products" class="hover:text-red-700 transition">Produk</a>
+                <a href="#certificates" class="hover:text-red-700 transition">Jaminan Mutu</a>
             </nav>
             <a href="https://wa.me/6282316758274?text=Halo%20saya%20tertarik%20dengan%20Promo%20Ruby%20AFC" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full font-medium flex items-center gap-2 shadow-md transition">
                 <i class="fab fa-whatsapp"></i> Klaim Promo
@@ -27,7 +39,6 @@
     </header>
 
     <section id="home" class="relative bg-gradient-to-br from-red-950 via-red-800 to-red-900 text-white py-20 md:py-24 overflow-hidden">
-        
         <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center mix-blend-screen"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-red-950/80 via-transparent to-transparent"></div>
 
@@ -51,10 +62,7 @@
                     </a>
                 </div>
             </div>
-            <div class="flex justify-center">
-                
-                </div>
-            </div>
+            <div class="flex justify-center"></div>
         </div>
     </section>
 
@@ -97,102 +105,97 @@
         </div>
     </section>
 
-    <section id="certificates" class="py-20 bg-white border-b border-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-red-600 font-bold text-xs uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full">Sertifikasi & Pengujian Resmi</span>
-                <h2 class="text-3xl font-bold text-gray-900 mt-3 mb-2">Jaminan Kualitas Mutu Standar Jepang <br><span class="text-red-600">(100% Murni & Aman)</span></h2>
-                <p class="text-gray-500 text-sm md:text-base">
-                    Seluruh produk impor AFC Japan diproduksi di bawah pengawasan ketat dan lolos uji klinis laboratorium terhadap kontaminasi elemen berbahaya dengan hasil resmi <span class="text-emerald-600 font-bold">"Not Detected"</span>.
-                </p>
+    <section id="facts" class="py-20 bg-gray-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-red-600 font-bold text-xs uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full">Edukasi Sains</span>
+                <h2 class="text-3xl font-extrabold text-gray-900 mt-3 mb-2">5 Fakta Keunggulan Produk</h2>
+                <p class="text-gray-500 text-sm md:text-base">Klik pada tab di bawah ini untuk melihat detail fakta klinis dan brosur resmi dari masing-masing produk kami.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <input type="radio" name="product_tabs" id="tab-hikari" class="hidden" checked>
+            <input type="radio" name="product_tabs" id="tab-utsukushhii" class="hidden">
+            <input type="radio" name="product_tabs" id="tab-subarashi" class="hidden">
+
+            <div class="tab-buttons flex justify-center space-x-2 md:space-x-4 mb-10 border-b border-gray-200 pb-px">
+                <label for="tab-hikari" class="px-5 py-3 font-bold text-sm md:text-base text-gray-500 border-b-2 border-transparent rounded-t-xl cursor-pointer transition hover:text-red-700">
+                    Hikari
+                </label>
+                <label for="tab-utsukushhii" class="px-5 py-3 font-bold text-sm md:text-base text-gray-500 border-b-2 border-transparent rounded-t-xl cursor-pointer transition hover:text-red-700">
+                    Utsukushhii Gold
+                </label>
+                <label for="tab-subarashi" class="px-5 py-3 font-bold text-sm md:text-base text-gray-500 border-b-2 border-transparent rounded-t-xl cursor-pointer transition hover:text-red-700">
+                    SOP Subarashi
+                </label>
+            </div>
+
+            <div class="tabs-container bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100">
                 
-                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/60 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-full h-96 bg-white rounded-xl mb-4 overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center">
-                            <img src="sertifikat-subarashi.jpeg" alt="Sertifikat SOP Subarashi" class="w-full h-full object-contain hover:scale-105 transition duration-300 block">
+                <div id="content-hikari" class="tab-content animate-fade-in">
+                    <div class="grid md:grid-cols-12 gap-10 items-center">
+                        <div class="md:col-span-5 flex justify-center">
+                            <div class="w-full max-w-sm rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                                <img src="hikari fakta.png" alt="5 Fakta Hikari" class="w-full h-auto object-cover block">
+                            </div>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-1">SOP Subarashi Certificate</h3>
-                        <p class="text-xs text-gray-500 mb-4">Pengujian resmi sampel produk secara periodik menggunakan alat ukur berpresisi tinggi di Jepang.</p>
-                    </div>
-                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between">
-                        <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider"><i class="fas fa-shield-alt mr-1"></i> Hasil: Lolos Uji</span>
-                        <span class="text-xs font-extrabold text-emerald-700 bg-white px-2 py-0.5 rounded shadow-sm">Not Detected</span>
+                        <div class="md:col-span-7 space-y-5">
+                            <h3 class="text-2xl font-bold text-purple-900 border-b pb-2">5 Fakta Penting AFC Hikari</h3>
+                            <ul class="space-y-4 text-sm text-gray-700">
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span> <span><strong>Bahan Utama Premium:</strong> Mengandung Sardine Peptide & Kombu Peptide sebagai nutrisi premium sel tubuh.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span> <span><strong>Molekul Halus (Peptide):</strong> Menggunakan teknologi penyerapan molekul mikro untuk efektivitas penyerapan yang maksimal.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span> <span><strong>Standar Farmasi Jepang:</strong> Diproduksi langsung di Jepang oleh perusahaan farmasi berskala besar yang sudah Go Public.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span> <span><strong>Ekstrak Abalone:</strong> Diperkaya dengan ekstrak Abalone premium pilihan sebagai sumber nutrisi unik yang melimpah.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">5</span> <span><strong>Paten Manfaat Medis:</strong> Mengantongi paten resmi untuk dukungan kesehatan jantung, pembuluh darah, serta regenerasi jaringan vital.</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/60 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-full h-96 bg-white rounded-xl mb-4 overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center">
-                            <img src="sertifikat-utsukushhii.jpeg" alt="Sertifikat Utsukushhii" class="w-full h-full object-contain hover:scale-105 transition duration-300 block">
+                <div id="content-utsukushhii" class="tab-content">
+                    <div class="grid md:grid-cols-12 gap-10 items-center">
+                        <div class="md:col-span-5 flex justify-center">
+                            <div class="w-full max-w-sm rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                                <img src="utsukushhii fakta.jpeg" alt="5 Fakta Utsukushhii Gold" class="w-full h-auto object-cover block">
+                            </div>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-1">Utsukushhii Certificate</h3>
-                        <p class="text-xs text-gray-500 mb-4">Sertifikasi kemurnian dan kebersihan berkala dari lembaga penjamin mutu independen Jepang.</p>
-                    </div>
-                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between">
-                        <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider"><i class="fas fa-shield-alt mr-1"></i> Hasil: Lolos Uji</span>
-                        <span class="text-xs font-extrabold text-emerald-700 bg-white px-2 py-0.5 rounded shadow-sm">Not Detected</span>
+                        <div class="md:col-span-7 space-y-5">
+                            <h3 class="text-2xl font-bold text-amber-900 border-b pb-2">5 Fakta Penting Utsukushhii Gold</h3>
+                            <ul class="space-y-4 text-sm text-gray-700">
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span> <span><strong>Formula Salmon Milt DNA:</strong> Menggunakan bahan utama Salmon Milt DNA yang dipadukan dengan 11 bahan aktif berkhasiat tinggi lainnya.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span> <span><strong>1 Triliun Probiotik:</strong> Padat akan bakteri baik yang sangat optimal untuk menjaga kestabilan kesehatan dan kondisi usus.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span> <span><strong>Kualitas Produksi Jepang:</strong> Diproduksi langsung dengan pengawasan teknologi tinggi dan standar operasional farmasi ketat di Jepang.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span> <span><strong>Asli Ikan Oncorhynchus Keta:</strong> Kandungan DNA diekstrak khusus dari jenis ikan Salmon jantan yang hanya ditemukan di daerah Hokkaido.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">5</span> <span><strong>8 Paten Medis Teruji:</strong> Termasuk Anti-Tumor Agent, Immune Activating, Terapi Hepatitis C, hingga pelindung dari infeksi virus berbahaya.</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/60 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-full h-96 bg-white rounded-xl mb-4 overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center">
-                            <img src="sertifikat-hikari.jpeg" alt="Sertifikat Hikari" class="w-full h-full object-contain hover:scale-105 transition duration-300 block">
+                <div id="content-subarashi" class="tab-content">
+                    <div class="grid md:grid-cols-12 gap-10 items-center">
+                        <div class="md:col-span-5 flex justify-center">
+                            <div class="w-full max-w-sm rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                                <img src="sob subarashi fakta.png" alt="5 Fakta SOP Subarashi" class="w-full h-auto object-cover block">
+                            </div>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-1">Hikari Certificate</h3>
-                        <p class="text-xs text-gray-500 mb-4">Standarisasi kelayakan ekspor penuh untuk memastikan produk aman dikonsumsi harian.</p>
-                    </div>
-                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between">
-                        <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider"><i class="fas fa-shield-alt mr-1"></i> Hasil: Lolos Uji</span>
-                        <span class="text-xs font-extrabold text-emerald-700 bg-white px-2 py-0.5 rounded shadow-sm">Not Detected</span>
+                        <div class="md:col-span-7 space-y-5">
+                            <h3 class="text-2xl font-bold text-indigo-900 border-b pb-2">5 Fakta Penting SOP Subarashi</h3>
+                            <ul class="space-y-4 text-sm text-gray-700">
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span> <span><strong>Perpaduan Bahan Utama Sinergis:</strong> Kombinasi Salmon Ovary Peptide (SOP), Hyaluronic Acid, serta Placenta bermutu tinggi.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span> <span><strong>Keseimbangan Probiotik:</strong> Dirancang khusus untuk mendukung kesehatan pencernaan usus serta menjaga ekosistem bakteri baik alami.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span> <span><strong>Reputasi Farmasi Terpercaya:</strong> Diproduksi oleh AFC Japan, korporasi farmasi terkemuka yang telah terdaftar resmi di bursa saham Jepang.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span> <span><strong>Teknologi Ekstraksi Mutakhir:</strong> Pengolahan bahan pangan terkonsentrasi untuk menghasilkan penyerapan nutrisi seluler super cepat.</span></li>
+                                <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">5</span> <span><strong>Regenerasi Seluler:</strong> Memiliki paten klinis yang terbukti kuat mendukung proses regenerasi jaringan seluler dan organ vital tubuh.</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-            
-            <div class="mt-8 text-center bg-gray-50 border border-gray-200 rounded-xl p-4 max-w-2xl mx-auto text-xs text-gray-500">
-                <i class="fas fa-info-circle text-red-600 mr-1"></i> Pengujian sampel dilakukan oleh <strong>Japan Inspection Association of Food and Food Industry Environment</strong> yang telah terakreditasi standar internasional ISO/IEC 17025:2017 oleh Perry Johnson Laboratory Accreditation, Inc.
             </div>
         </div>
     </section>
 
-    <section id="benefits" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-2">Mengapa Memilih AFC?</h2>
-            <p class="text-gray-500 max-w-xl mx-auto mb-16">Produk AFC diproduksi dengan standar kualitas tinggi untuk memastikan manfaat terbaik bagi tubuh Anda.</p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-white hover:shadow-xl transition group border border-gray-100">
-                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6 mx-auto group-hover:bg-red-700 group-hover:text-white transition-all">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Paten Fungsi Klinis</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Bukan sekadar klaim testimoni, produk AFC memiliki paten fungsi resmi yang telah teruji secara klinis di laboratorium.</p>
-                </div>
-                
-                <div class="p-8 rounded-2xl bg-white hover:shadow-xl transition group border border-gray-100">
-                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6 mx-auto group-hover:bg-red-700 group-hover:text-white transition-all">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Aman & Terdaftar Resmi</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Seluruh produk yang dipasarkan di Indonesia dijamin aman karena telah memiliki izin edar resmi dari BPOM dan sertifikasi Halal.</p>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-white hover:shadow-xl transition group border border-gray-100">
-                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6 mx-auto group-hover:bg-red-700 group-hover:text-white transition-all">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Farmasi Tertua di Jepang</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Diproduksi oleh Asayama Family Club (AFC), salah satu perusahaan farmasi tertua dan terbesar di Jepang yang terdaftar di Tokyo Stock Exchange.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="products" class="py-20 bg-white border-t border-gray-100">
+    <section id="products" class="py-20 bg-white border-b border-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-xl mx-auto mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 mb-2">Produk Utama & Harga Resmi</h2>
@@ -259,6 +262,99 @@
                         <a href="https://wa.me/6282316758274?text=Halo,%20saya%20ingin%20beli%20AFC%20Hikari" target="_blank" class="bg-red-700 hover:bg-red-800 text-white px-3 py-2 rounded-xl font-medium text-xs shadow transition">Beli Ecer</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Mengapa Memilih AFC?</h2>
+            <p class="text-gray-500 max-w-xl mx-auto mb-16">Produk AFC diproduksi dengan standar kualitas tinggi untuk memastikan manfaat terbaik bagi tubuh Anda.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-white hover:shadow-xl transition group border border-gray-100">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6 mx-auto group-hover:bg-red-700 group-hover:text-white transition-all">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Paten Fungsi Klinis</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Bukan sekadar klaim testimoni, produk AFC memiliki paten fungsi resmi yang telah teruji secara klinis di laboratorium.</p>
+                </div>
+                
+                <div class="p-8 rounded-2xl bg-white hover:shadow-xl transition group border border-gray-100">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6 mx-auto group-hover:bg-red-700 group-hover:text-white transition-all">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Aman & Terdaftar Resmi</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Seluruh produk yang dipasarkan di Indonesia dijamin aman karena telah memiliki izin edar resmi dari BPOM dan sertifikasi Halal.</p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-white hover:shadow-xl transition group border border-gray-100">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6 mx-auto group-hover:bg-red-700 group-hover:text-white transition-all">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Farmasi Tertua di Jepang</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Diproduksi oleh Asayama Family Club (AFC), salah satu perusahaan farmasi tertua dan terbesar di Jepang yang terdaftar di Tokyo Stock Exchange.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="py-20 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-red-600 font-bold text-xs uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full">Sertifikasi & Pengujian Resmi</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-3 mb-2">Jaminan Kualitas Mutu Standar Jepang <br><span class="text-red-600">(100% Murni & Aman)</span></h2>
+                <p class="text-gray-500 text-sm md:text-base">
+                    Seluruh produk impor AFC Japan diproduksi di bawah pengawasan ketat dan lolos uji klinis laboratorium terhadap kontaminasi elemen berbahaya dengan hasil resmi <span class="text-emerald-600 font-bold">"Not Detected"</span>.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/60 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-96 bg-white rounded-xl mb-4 overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center">
+                            <img src="sertifikat-subarashi.jpeg" alt="Sertifikat SOP Subarashi" class="w-full h-full object-contain hover:scale-105 transition duration-300 block">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">SOP Subarashi Certificate</h3>
+                        <p class="text-xs text-gray-500 mb-4">Pengujian resmi sampel produk secara periodik menggunakan alat ukur berpresisi tinggi di Jepang.</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between">
+                        <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider"><i class="fas fa-shield-alt mr-1"></i> Hasil: Lolos Uji</span>
+                        <span class="text-xs font-extrabold text-emerald-700 bg-white px-2 py-0.5 rounded shadow-sm">Not Detected</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/60 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-96 bg-white rounded-xl mb-4 overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center">
+                            <img src="sertifikat-utsukushhii.jpeg" alt="Sertifikat Utsukushhii" class="w-full h-full object-contain hover:scale-105 transition duration-300 block">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Utsukushhii Certificate</h3>
+                        <p class="text-xs text-gray-500 mb-4">Sertifikasi kemurnian dan kebersihan berkala dari lembaga penjamin mutu independen Jepang.</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between">
+                        <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider"><i class="fas fa-shield-alt mr-1"></i> Hasil: Lolos Uji</span>
+                        <span class="text-xs font-extrabold text-emerald-700 bg-white px-2 py-0.5 rounded shadow-sm">Not Detected</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/60 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-96 bg-white rounded-xl mb-4 overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center">
+                            <img src="sertifikat-hikari.jpeg" alt="Sertifikat Hikari" class="w-full h-full object-contain hover:scale-105 transition duration-300 block">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Hikari Certificate</h3>
+                        <p class="text-xs text-gray-500 mb-4">Standarisasi kelayakan ekspor penuh untuk memastikan produk aman dikonsumsi harian.</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between">
+                        <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider"><i class="fas fa-shield-alt mr-1"></i> Hasil: Lolos Uji</span>
+                        <span class="text-xs font-extrabold text-emerald-700 bg-white px-2 py-0.5 rounded shadow-sm">Not Detected</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center bg-gray-50 border border-gray-200 rounded-xl p-4 max-w-2xl mx-auto text-xs text-gray-500">
+                <i class="fas fa-info-circle text-red-600 mr-1"></i> Pengujian sampel dilakukan oleh <strong>Japan Inspection Association of Food and Food Industry Environment</strong> yang telah terakreditasi standar internasional ISO/IEC 17025:2017 oleh Perry Johnson Laboratory Accreditation, Inc.
             </div>
         </div>
     </section>
